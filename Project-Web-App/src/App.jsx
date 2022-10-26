@@ -5,6 +5,7 @@ import client from './config/apollo'
 import { ApolloProvider } from '@apollo/client'
 import Auth from "./pages/Auth"
 import { ToastContainer } from "react-toastify"
+import Navigation from './routes/Navigation'
 
 function App() {
   const [auth, setAuth] = useState(undefined)
@@ -31,7 +32,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <AuthContext.Provider value={authData}>
-        {!auth ? <Auth /> : <h1>Estas logeado</h1>}
+        {!auth ? <Auth /> : <Navigation />}
 
         <ToastContainer
           position="bottom-left"
