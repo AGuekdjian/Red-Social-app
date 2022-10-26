@@ -1,0 +1,44 @@
+@import "../../scss/index.scss";
+
+.auth {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    background: $bg-dark;
+
+    img {
+        width: 120px;
+    }
+
+    .conteiner-form {
+        width: 400px;
+        background: $bg-light;
+        padding: 20px 50px;
+        border: 1px solid $border-grey;
+        margin-top: 50px;
+        border-radius: 5px;
+    }
+
+    .change-form {
+        margin-top: 10px;
+        width: 400px;
+        background: $bg-grey;
+        padding: 20px 50px;
+        border: 1px solid $border-grey;
+        text-align: center;
+        border-radius: 5px;
+
+        span {
+            color: $action;
+            font-weight: bold;
+            margin-left: 5px;
+
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+}

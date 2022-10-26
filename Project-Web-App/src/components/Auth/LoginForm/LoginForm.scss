@@ -1,0 +1,22 @@
+@import "../../../scss/index.scss";
+
+.login-form {
+    margin-top: 10px;
+    width: 400px;
+    background: $bg-grey;
+    padding: 20px 50px;
+    border: 1px solid $border-grey;
+    text-align: center;
+    border-radius: 5px;
+
+    .login-form-title {
+        font-size: 17px !important;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    input {
+        padding: 13px 15px !important;
+        background: $bg-light !important;
+    }
+}
