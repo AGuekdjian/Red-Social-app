@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react'
-import { getToken } from './utils/token'
+import { decodeToken, getToken } from './utils/token'
 import AuthContext from './context/AuthContext'
 import client from './config/apollo'
 import { ApolloProvider } from '@apollo/client'
@@ -9,13 +9,14 @@ import Navigation from './routes/Navigation'
 
 function App() {
   const [auth, setAuth] = useState(undefined)
+  // const [dataUser, setDataUser] = useState(undefined)
 
   useEffect(() => {
     const token = getToken()
     if (!token) {
       setAuth(null)
     } else {
-      setAuth(token)
+      setAuth(decodeToken(token))
     }
   }, [])
 
@@ -28,6 +29,8 @@ function App() {
   }
 
   const authData = useMemo(() => ({ auth, logout, setUser }), [auth])
+
+  if(auth === undefined) return null
 
   return (
     <ApolloProvider client={client}>

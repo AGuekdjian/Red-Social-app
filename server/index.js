@@ -5,6 +5,7 @@ const resolvers = require("./gql/resolver");
 
 require("dotenv").config({ path: ".env" });
 
+mongoose.set("strictQuery", true)
 mongoose.connect(
     process.env.BBDD,
     {
